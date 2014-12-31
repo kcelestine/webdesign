@@ -1,0 +1,38 @@
+/* ==========================================================================
+	Contact
+========================================================================== */
+
+.contact {
+	background: #f1f1f1;
+	border-radius: 10px;
+	padding:3%;
+	margin-bottom:rhythm(1);
+
+	@include breakpoint($medium) {
+		width:47%;
+		display:inline-block;
+		margin-right:3%;
+		vertical-align: top;
+	}
+	&:nth-child(even) {
+		margin-right:0;
+	}
+	h2 {
+		margin-top:0;
+	}
+}
+.contactInfo {
+	list-style:none;
+	padding:0;
+
+	li {
+		margin-bottom:0;
+	}
+	span {
+		color:#aaa;
+		display:inline-block;
+		width:30%;
+		text-align: right;
+		padding-right:10px;
+	}
+}
