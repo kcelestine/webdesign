@@ -1,0 +1,14 @@
+/* ==========================================================================
+	Home
+========================================================================== */
+
+.homeFeature {
+	background:url(../img/webdesign-logo.png) no-repeat center top;
+	background-image: linear-gradient(transparent,transparent) url(../img/webdesign-logo.svg);
+	padding-top: 170px;
+
+	@include breakpoint($medium) {
+		padding: 0 0 0 200px;
+		background-position: 0 15px;
+	}
+}

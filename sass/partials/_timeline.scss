@@ -1,0 +1,26 @@
+/* ==========================================================================
+	Timeline
+========================================================================== */
+
+.week {
+	background: #f1f1f1;
+	border-radius: 10px;
+	padding:3%;
+	margin-bottom:rhythm(1);
+
+	p {
+		margin-left:25px;
+	}
+	@include breakpoint($medium) {
+		width:47%;
+		display:inline-block;
+		margin-right:3%;
+		vertical-align: top;
+	}
+	&:nth-child(odd) {
+		margin-right:0;
+	}
+	.h2 {
+		margin-top: 0;
+	}
+}

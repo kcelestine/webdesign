@@ -1,0 +1,89 @@
+/* ==========================================================================
+	Header
+========================================================================== */
+
+.siteHeader {
+	background: $tiy-gray1;
+	color: #fff;
+	padding: 10px;
+	margin-bottom:25px;
+	text-align: center;
+
+	@include breakpoint($medium) {
+		text-align:left;
+		padding: 10px 20px;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			color: $tiy-callout;
+			text-decoration:underline;
+		}
+	}
+}
+.logo {
+	margin: 0 auto 10px;
+
+	@include breakpoint($large) {
+		max-width: 960px;
+	}
+	a {
+		display:block;
+		margin:0 auto;
+		width:99px;
+		height:87px;
+		background:url(../img/iron-yard-logo.png) no-repeat 0 0;
+		background-image:linear-gradient(transparent,transparent), url(../img/iron-yard-logo.svg);
+		text-indent: -9999px;
+
+		@include breakpoint($medium) {
+			margin: 0;
+		}
+	}
+}
+.className {
+	@include adjust-font-size-to(20px);
+
+	@include breakpoint($medium) {
+		position:absolute;
+		top:25px; left:130px;
+	}
+	span {
+		display: block;
+		@include adjust-font-size-to(14px,1,20px);
+	}
+}
+.pageNav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		@include breakpoint($large) {
+			text-align: right;
+			position:absolute;
+			top:30px; right: 0;
+		}
+	}
+	li {
+		display:inline;
+		margin: 0;
+	}
+	a {
+		display:inline-block;
+		@include adjust-font-size-to(18px);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin:0 10px;
+		padding:rhythm(0.25) 0;
+		border-bottom: 3px solid $tiy-gray1;
+
+		&:hover {
+			color:#fff;
+			text-decoration:none;
+			border-color: $tiy-gray4;
+		}
+	}
+}
