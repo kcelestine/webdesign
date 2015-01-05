@@ -11,7 +11,7 @@ var jsSources = [
 	'js/main.js'
 ];
 var sassSources = ['sass/style.scss'];
-var htmlSources = ['*.html'];
+var htmlSources = ['**/*.html'];
 
 gulp.task('js', function(){
 	gulp.src(jsSources)
