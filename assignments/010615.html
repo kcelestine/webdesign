@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Design January 2015 - The Iron Yard Columbia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+	<script src="//use.typekit.net/pjr3opl.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="js/vendor/html5shiv.js"></script>
+        <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>unsupported</strong> browser. Please <a href="http://www.whatbrowser.org/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<a href="#mainContent" class="visuallyhidden">Skip to content</a>
+
+<header class="siteHeader" role="banner">
+	<div class="wrapper">
+		<h1 class="logo"><a href="../index.html">The Iron Yard</a></h1>
+		<p class="className">Web Design <span>January 2015 - Columbia, SC</span></p>
+		<nav class="pageNav">
+			<ul>
+				<li><a href="../timeline.html">Timeline</a></li>
+				<li><a href="../schedule.html">Schedule</a></li>
+				<li><a href="../policies.html">Policies</a></li>
+				<li><a href="../assignments.html">Assignments</a></li>
+				<li><a href="../contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div> <!-- /.wrapper -->
+</header> <!-- /.siteHeader -->
+
+<main class="mainContent" id="mainContent" role="main">
+	<h1>Assignments for Tuesday, January 6</h1>
+
+	<h2>Git Setup:</h2>
+	<p>(To review the Git process, see <a href="https://try.github.io/">https://try.github.io/</a></p>
+	<ol>
+		<li>Run <code>git init</code> in the "outlanderspices" directory.</li>
+		<li>Add a <a href="https://raw.githubusercontent.com/greglunn/examplefiles/master/.gitignore">.gitignore</a> file to the directory.</li>
+		<li>Add a README.md file to the directory, with a title and a description.</li>
+		<li>Run <code>git add</code> to stage all files in this directory, and run <code>git commit -m "message"</code> to commit them.</li>
+		<li>Create a new repository on your GitHub account called "outlanderspices"</li>
+		<li>Use the commands from GitHub to link your remote repository to your local files.</li>
+		<li>Run <code>git push -u origin master</code> to push your files to GitHub.</li>
+	</ol>
+
+	<h2>HTML:</h2>
+	<ol>
+		<li>Add a top navigation (using a list of links) to all pages of the Outlander Spices website. Link to the pages we have already created. Assume the following sitemap:
+			<ul>
+				<li>Home</li>
+	    		<li>About Us</li>
+	    		<li>Products</li>
+	    		<li>Recipes</li>
+	    		<li>Order Online</li>
+	    		<li>Locations</li>
+	    		<li>Contact Us</li>
+			</ul>
+		</li>
+		<li>Create a new page named, "contactus.html." On this page, create a form to collect user information, with appropriate form fields for the following:
+			<ul>
+				<li>Name</li>
+				<li>Address</li>
+				<li>City</li>
+				<li>State</li>
+				<li>Zip</li>
+				<li>Email address</li>
+				<li>Choose your favorite spice (from the list spices on the product page)</li>
+				<li>Share how you have used Outlander Spices to spice up your favorite dish</li>
+				<li>Choose professional chef or home cook</li>
+				<li>Sign me up for your newsletter</li>
+				<li>Submit buttons</li>
+			</ul>
+		</li>
+		<li>On the "About Us" page, create a list of links at the top of the content that link to the "All Spiced Up," "Expansion Project" and "The Project Team" sections of the same page. Create "Back to top" links to return to the top of the page.</li>
+		<li>Commit your changes and to push them to GitHub. Email the GitHub link to your instructor. <script>
+				{ coded = "6S86@Gb8dSqt7TSZ.Mqx"
+				  key = "YICW8A5kilVGswDrN09F1BvgOuX3dmhRynjSc2foaEQ6HLeJZxbp7t4UMKPqTz"
+				  shift=coded.length
+				  link=""
+				  for (i=0; i<coded.length; i++) {
+				    if (key.indexOf(coded.charAt(i))==-1) {
+				      ltr = coded.charAt(i)
+				      link += (ltr)
+				    }
+				    else {     
+				      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+				      link += (key.charAt(ltr))
+				    }
+				  }
+				document.write("<a href='mailto:"+link+"'>"+link+"</a>")
+				}
+				//-->
+				</script></li>
+	</ol>
+
+	<h2>Beast Mode:</h2>
+	<ol>
+		<li>Create a page called "orderonline.html" with an appropriate order form. How would you accept orders for a site that sells spices? Wat type of information would you need to collect?</li>
+		<li>Create a "Locations" page for Outlander Spices. Where are their stores located? What types of information would the user hope to find on this page? How would that content be marked up in HTML?</li>
+	</ol>
+
+	<h2>Reference</h2>
+	<ul>
+		<li><a href="http://wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx-command-prompt/">The Designer's Guide to the OS X Command Prompt</a></li>
+		<li><a href="http://git-scm.com/documentation">Git Documentation</a></li>
+	</ul>
+
+</main> <!-- /.mainContent -->
+
+<script src="../js/script.js"></script>
+</body>
+</html>
