@@ -1,0 +1,275 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>jQuery Examples</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="wrapper">
+
+    <h1 class="pagetitle">jQuery for Beginners + Examples</h1>
+
+    <div class="example jquery">
+        <h2>jQuery</h2>
+        <h3>jQuery is a javaScript Library</h3> 
+        <p>What that means is that jQuery is a bunch of javaScript that has already been written and tested so that you don't have to. It's designed to simplify selecting and interacting with the DOM. Browsers have implemented javaScript differently from one another, so writting "raw" JS can mean a lot of security code and duplicated objects.</p>
+        <p>jQuery is designed around the idea that most of the people using it won't be javaScript experts. It is designed so that CSS selectors can be used indecriminately to select DOM elements and manipulate them. jQuery also comes with a host of functions that do common tasks like hide elements and change applied styling. JQuery also offers a list of functions for data management and communicating with the server, but those are advanced topics and will only be touched upon if you guys get way ahead.</p>
+        
+        <h3>jQuery is an External Library</h3>
+
+        <p>You can't use jQuery unless you include it in your website. It works much the same as CSS but the syntax is a little different.</p>
+        <p>For this page, jQuery is included in the root of the site, so I can link directly to it. You will need to adjust your path if you are storing jQuery in a different location.</p>
+
+<pre><code>
+<strong>&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;</strong>
+</code></pre>
+
+        <h3>The '$' Sign and jQuery</h3>
+        <p>You will see the '$' sign a lot in jQuery which can be very confusing to new users, but know that "$" is just an alias for the jQuery object. An alias is just another name for the same thing. In this case, <code>'jQuery' = '$'.</code></p>
+    </div>
+
+    <div class="example ready">
+        <h2>Selecting DOM Elements with jQuery</h2>
+
+        <p>jQuery is an object that has all of its members and functions directly attached to it, but jQuery needs to be initialized to work properly. The reason that jQuery needs to be initialized is because of the way that the browser loads content. jQuery needs to wait until the browser has rendered enough of the DOM for it to work upon. If this is Greek, don't worry, it will eventually make sense.</p>
+        <p>To ensure that the browser is ready, jQuery has a built in function that allows it to make it's own check and initialize itself. This is the <code>ready function</code>.</p>
+
+<pre><code>
+<strong>$( document ).ready( function(){</strong>
+    //Put your code in here
+<strong>});</strong>
+</code></pre>
+
+        <p>Lets discuss what is going on in this example. First, don't forget that '$' is the same as 'jQuery'. I could just as easiy written:</p>
+
+<pre><code>
+//Both of these function are exactly the same
+
+<strong>$( document ).ready( function(){</strong>
+    //Put your code in here
+<strong>});</strong>
+
+<strong>jQuery( document ).ready( function(){</strong>
+    //Put your code in here
+<strong>});</strong>
+</code></pre>
+
+        <p>First, we use the jQuery object to select a DOM element. In this case, we are selecting the document object, but you coul also select regular HTML elements with tag names, ids, and class names.</p>
+        <p>What you need to remember is that the jQuery object is just a function, and if follows the same conventions.</p>
+
+        <ol>
+            <li>The function has a name. In this case, the name of the function is "$".</li>
+            <li>The function uses paraenthesis to signify that it is to be executed.</li>
+            <li>All function parameters are passed to the function by placing them within the function parenthesis. The order of the parameters is important and is defined by the function definition.</li>
+            <li>Functions always return a value. The default value is "undefined", but in this case, jQuery returns itself.</li>
+        </ol>
+
+<pre><code>
+//This is how we select the document object.
+
+<strong>$( document )...</strong>
+
+//Now, jQuery has selected the document object and retured itself
+//We can attach another jQuery function to the selector and act upon our selection.
+
+<strong>$( document ).ready( ... );</strong>
+
+//notice that "ready" is just another function.
+//"ready" waits unitl the document has loaded and then executes
+//whatever has been passed to it as a parameter.
+//In this case, we pass a generic function. The generic function has no name,
+//but can be executed by the ready function anyway.
+
+<strong>jQuery( document ).ready( function(){</strong>
+
+    //Put your code in here
+
+<strong>});</strong>
+</code></pre>
+
+        <p>All jQuery code needs to go inside the function that you pass to the ready function.</p>
+    </div>
+
+    <div class="example logging">
+        <h2>Logging for Debugging</h2>
+
+        <p>A useful tool that is built into browsers is the console object. This object allows you to see the javaScript data and objects in the browser.</p>
+        <p>The output will show up on the browser's debug tools. I'm using Chrome, so I'll show you how to find the console.</p>
+        
+        <h3>Chrome's Console View</h3>
+        <p>In Chrome press "Command" + "Option" + "i". This will open or close the debug tools</p>
+        
+        <img src="img/debug1.png" alt="">
+        <small>The Debug Window is open but the Console view is hidden.</small>
+
+        <p>What you are looking for is in the bottom left hand corner of the debug tools window. You are looking for a tab called "console".</p>
+
+        <img src="img/debug2.png" alt="">
+        <small>Select Console and expand it up to show the logged data.</small>
+
+        <p>Select the tab and drag the console window up so that you can see the output.</p>
+
+        <h3>Logging Data</h3>
+
+        <p>We are using jQuery, so every bit of code we write will be wrapped in the ready function. We are going to log the string "Hello World!" to the console view in Chrome.</p>
+        <p>In a nutshell, what we are doing is fairly straightforward. We are asking the console object to execute it's log function. The log function takes it's parameters and spits them out in the console window. In this case, the parameter being logged is the string "Hello World!"</p>
+        <p>Here is the code:</p>
+
+<pre><code>
+<strong>$( document ).ready( function(){</strong>
+    
+    //this is the bit of code that actually does the logging
+    <strong>console.log( "Hello World!" );</strong>
+
+<strong>});</strong>
+</code></pre>
+
+        <script>
+            $( document ).ready( function(){
+                console.log( "Hello World!" );
+            });
+        </script>
+
+        <img src="img/debug3.png" alt="">
+        <small>The console object has logged the string "Hello World!" in the browser.</small>
+        <p>Keep in mind that you can log just about anything. You can log variable, functions, objects, strings or any other data that might make you life easier as a programmer.</p>
+
+    </div>
+    <div class="example selecting">
+        <h2>More on Selecting Objects</h2>
+        <p>jQuery offers a robust api for selecting DOM elements that allows you to use tag names, classes, and ids to grab the bit of HTML that you want to manipulate. However, there are a few things to keep in mind.</p>
+
+        <ol>
+            <li>If you select a tag name or class, you will select <em>every instance of that tag or class that appears on the page.</em> For this reason, I usually stick with selecting ids, unless I want to select a colletion of items.</li>
+            <li>Elements that are dynamially added to the page after page load will not be selected.</li>
+            <li>Some methods for selecting elements are faster than others.</li>
+            <li>You can select elements via CSS specificity, but it can be slow.</li>
+        </ol>
+
+        We are going to work with a little HTML snippet to demonstrate some of these concepts.
+        
+        <pre><code>      
+<strong>&lt;ul id=&quot;nav_container&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;home_link&quot; class=&quot;nav_element&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;about_link&quot; class=&quot;nav_element&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;contact_link&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;faq_link&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</strong>
+
+
+//lets select some stuff
+<strong>$( document ).ready( function(){</strong>
+    
+    //this will select the first two links,
+    //because the have a class of "nav_element"
+    <strong>$( ".nav_element" )...</strong>
+    
+    //this will select every li, inclucing all
+    //the other ones on this page! Be careful,
+    //jQuery deosn't know that you only want to
+    //select from this one unordered list.
+    <strong>$( "li" )...</strong>
+
+    //this will select ever unordered list on the page
+    //you'll need to find a way to specify which unordered
+    //list you want to select, hence the next example
+    <strong>$( "ul" )...</strong>
+
+    //this will select only the unordered list
+    //with an id of 'nav_container'
+    <strong>$( "#nav_container" )...</strong>
+
+    //this will select all the list items in the unordered list
+    //with an id of 'nav_container'
+    //however, its slow
+    <strong>$( "#nav_container li" )...</strong>
+
+    //This example does the same thing as the last example, but is faster.
+    //The find function is optimized, whereas CSS specificity is not.
+    //Both work, but this is better in the long run
+    <strong>$( "#nav_container" ).find( "li" )...</strong>
+
+<strong>});</strong>
+        </code></pre>
+    </div>
+    
+    <div class="example functions">
+        <h2>jQuery Functions</h2>
+
+        <p>Now that you know how to select elements, lets discuss some of jQuery's basic functions. Much of what you'll do in a custom web app will require a deeper understanding of javaScript, but jQuery provides a library of functions for common actions, like changing the color of an element or adding a class to an element. What follows is a series of Pens from CodePen that illustrate some of this functionality.</p>
+
+        <h3>Changing CSS</h3>
+
+        <p data-height="458" data-theme-id="11497" data-slug-hash="ByRjxX" data-default-tab="result" data-user="giodif" class='codepen'>See the Pen <a href='http://codepen.io/giodif/pen/ByRjxX/'>Changing CSS with jQuery</a> by Giovanni DiFeterici (<a href='http://codepen.io/giodif'>@giodif</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        
+        <p>Changing CSS with javaScript isn't a great practice, but sometimes it's necessary. In the Codpen exmaple above, I am attaching click events to each of the buttons on the page. One button fires function that adds inline CSS to the selected HTML elements, #first and #second. This inline CSS added changes the div in the following way.</p>
+
+<pre><code>
+//We started with theis bit of HTML
+&lt;div id=&quot;first&quot;&gt;&lt;/div&gt;
+
+//After the attribute is added, it looks like this
+&lt;div id=&quot;first&quot; style=&quot;background-color:green;&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+        <p>The "Restore Colors" button simply removes the style attribute that has been added to the div. Because no styles are overriding the CSS, the background color reverts to what it was to begin with.</p>
+
+
+        <h3>Adding/Removing Classes</h3>
+
+        <p data-height="447" data-theme-id="11497" data-slug-hash="vEmLaQ" data-default-tab="result" data-user="giodif" class='codepen'>See the Pen <a href='http://codepen.io/giodif/pen/vEmLaQ/'>Changing CSS with jQuery</a> by Giovanni DiFeterici (<a href='http://codepen.io/giodif'>@giodif</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+        <p>This CodePen does exactly what the last on did, but in a different way. Instead of adding a style attribute to the divs, it adds a class. The styling for that class is defined in the CSS file, so whent the class is added to the element, it changes visually. This is a better practice than the last example because it doesn't add inline styles to the HTML.</p>
+<pre><code>
+//We started with theis bit of HTML
+&lt;div id=&quot;first&quot;&gt;&lt;/div&gt;
+
+//After the class is added, it looks like this
+&lt;div id=&quot;first&quot; class=&quot;green&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+        <p>Note: This will not interfere with any classes already added to your HTML element.</p>
+
+        <h3>Hiding Objects</h3>
+
+        <p>A common use case for jQuery is for mobile navigation. Again, this isn't considered a best practice, but its amazingly common. Plus, it's useful for illustrating how easy it is to create a great visual effect with jQuery.</p>
+
+        <p data-height="386" data-theme-id="11497" data-slug-hash="KwmVGM" data-default-tab="result" data-user="giodif" class='codepen'>See the Pen <a href='http://codepen.io/giodif/pen/KwmVGM/'>KwmVGM</a> by Giovanni DiFeterici (<a href='http://codepen.io/giodif'>@giodif</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    </div>
+    
+    <div class="example events">
+        <h2>Review the jQuery Documentation</h2>
+
+        <p>Obviously, I can't explain the entire jQuery library in one page. I hope this acts as a basic primer. To gain a better understanding of jQuery, you need to review the jQuery documentation site for more information on specific topics.</p>
+        <p>Here are a few links to useful materials that will help you understand jQuery.</p>
+        
+        <h3>A Tutorial Series to Help You Understand jQuery</h3>
+        <ul>
+            <li><a target="_blank" href="https://www.youtube.com/playlist?list=PLoYCgNOIyGABdI2V8I_SWo22tFpgh2s6_">LearnCode.academy</a></li>
+        </ul>
+
+        <h3>jQuery Documentation</h3>
+        <ul>
+            <li><a target="_blank" href="http://api.jquery.com/click/">The Click event</a></li>
+            <li><a target="_blank" href="http://api.jquery.com/on/">The On Function</a></li>
+            <li><a target="_blank" href="http://api.jquery.com/category/events/">All jQuery events</a></li>
+            <li><a target="_blank" href="http://api.jquery.com/category/selectors/">Selectors</a></li>
+            <li><a target="_blank" href="http://api.jquery.com/find/">the Find Function</a></li>
+            <li><a target="_blank" href="http://api.jquery.com/category/manipulation/">Functions to Change your HTML</a></li>
+        </ul>
+    </div>
+</div>                   
+</body>
+</html>
