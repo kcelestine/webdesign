@@ -71,3 +71,19 @@ textarea {
 .invisible {  // Hide + Keep in DOM & Flow
 	visibility: hidden;
 }
+
+.button {
+	display:inline-block;
+	background: $tiy-callout;
+	color: #fff;
+	text-decoration: none;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	@include transition(background 0.2s ease);
+
+	&:hover {
+		background:darken($tiy-callout,15);
+		color:#fff;
+	}
+}
